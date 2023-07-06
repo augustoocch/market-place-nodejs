@@ -1,0 +1,26 @@
+{
+  "name": "agencia-viajes-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type":"module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/augustoocch/market-place-nodejs.git"
+  },
+  "author": "AugustoOcc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/augustoocch/market-place-nodejs/issues"
+  },
+  "homepage": "https://github.com/augustoocch/market-place-nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
