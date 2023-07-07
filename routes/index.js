@@ -9,8 +9,7 @@ router.get('/', (req, res) => {
     const trip = "Trip to germany";
     //To show a view
     res.render('us', {
-        textTrip : trip, //Asi
-        trip  //o asi
+        trip
     })
 
 });
