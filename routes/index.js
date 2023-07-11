@@ -4,14 +4,22 @@ import express from 'express';
 //in the main index
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/us', (req, res) => {
 
-    const trip = "Trip to germany";
+    const travel = "About us";
     //To show a view
     res.render('us', {
-        trip
+        travel
     })
 
 });
+
+router.get('/home', (req, res) => {
+    
+    const home = "Inicial page";
+    res.render('home', {
+        home
+    })
+})
 
 export default router;
