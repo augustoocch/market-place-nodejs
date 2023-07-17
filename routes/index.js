@@ -4,14 +4,31 @@ import express from 'express';
 //in the main index
 const router = express.Router();
 
-router.get('/us', (req, res) => {
+router.get('/home', (req, res) => {
 
-    const travel = "About us";
     //To show a view
-    res.render('us', {
-        travel
-    })
+    res.render('home', {
+        initialHeader: 'Home'
+    });
 
+});
+
+router.get('/us', (req, res) => {
+    res.render('us', {
+        initialHeader: 'About us'
+    });
+});
+
+router.get('/travel', (req, res) => {
+    res.render('travel', {
+        initialHeader: 'Travel'
+    });
+});
+
+router.get('/testimonies', (req, res) => {
+    res.render('testimonies', {
+        initialHeader: 'Testimonies'
+    });
 });
 
 router.get('/home', (req, res) => {
