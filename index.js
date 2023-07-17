@@ -1,7 +1,17 @@
 import express from "express";
 import router from "./routes/index.js";
+import db from './config/db.js';
 
 const app = express();
+
+
+//Connect DB
+db.authenticate()
+    .then(() => {
+        console.log("DB connected")
+    }).catch( err => {
+        console.log(err);
+    })
 
 //MIDDLEWARE WITH EXPRESS
 //Define port
