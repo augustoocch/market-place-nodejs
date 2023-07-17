@@ -1,42 +1,15 @@
 import express from 'express';
-
+import { homePage, aboutUs, testimonies, travel } from '../controller/controller.js';
 //Router creates an express instance defined
 //in the main index
 const router = express.Router();
 
-router.get('/home', (req, res) => {
+router.get('/home', homePage);
 
-    //To show a view
-    res.render('home', {
-        initialHeader: 'Home'
-    });
+router.get('/us', aboutUs);
 
-});
+router.get('/testimonies', testimonies);
 
-router.get('/us', (req, res) => {
-    res.render('us', {
-        initialHeader: 'About us'
-    });
-});
-
-router.get('/travel', (req, res) => {
-    res.render('travel', {
-        initialHeader: 'Travel'
-    });
-});
-
-router.get('/testimonies', (req, res) => {
-    res.render('testimonies', {
-        initialHeader: 'Testimonies'
-    });
-});
-
-router.get('/home', (req, res) => {
-    
-    const home = "Inicial page";
-    res.render('home', {
-        home
-    })
-})
+router.get('/travel', travel);
 
 export default router;
