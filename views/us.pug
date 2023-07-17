@@ -2,6 +2,30 @@ extends ./layout/index
 
 block content
     main.container.mt-5 
-        .row 
-            h1=initialHeader
-                img(src="/img/cupon.jpg")
+        .row
+            .col-md-5 
+                img(src="/img/nosotros.jpg", alt="about-us", class="img-fluid")
+            .col-md-7 
+                h1=initialHeader
+                blockquote Welcome to AugustTrip, where dreams of exploring the world come to life. From our humble beginnings, we have been devoted to providing exceptional travel experiences that leave a lasting imprint in the memories of our clients. Our passion for discovering new horizons and commitment to excellence have led us to become industry leaders.
+
+                p At AugustTrip, we believe that every journey should be an unforgettable adventure, thoughtfully tailored to meet the unique desires and needs of our travelers. Whether dreaming of immersing oneself in exotic cultures, exploring awe-inspiring natural landscapes, or indulging in the sophistication of bustling cities, we are here to bring those aspirations to reality. Our team of travel experts consists of avid explorers who know every corner of the world and take pride in crafting bespoke itineraries that exceed all expectations. We work tirelessly to provide top-notch service, offering specialized guidance and meticulous attention to detail at every step of the way.
+               
+                p Join us on this thrilling voyage and discover the world through the eyes of AugustTrip. Let us guide you to extraordinary destinations and unforgettable experiences that will enrich your life forever. Trust us to turn your travel dreams into reality and share moments of joy, wonder, and connection with diverse cultures. Welcome to the AugustTrip family!
+    .list-icons
+        .container.mt-5.py-5.text-center 
+            .row 
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="security-icon", class="img-fluid mb-4")  
+                    h2.mb-4 Security
+                    p At AugustTrip, we prioritize security and privacy. Strong encryption protects data, and regular updates counter emerging threats. Explore with confidence, knowing your safety is paramount.
+
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="security-icon", class="img-fluid mb-4")  
+                    h2.mb-4 Destinations
+                    p Discover captivating destinations, curated for every wanderlust. From serene beaches to vibrant cultural hubs, our itineraries offer diverse experiences. Let our experts guide you to hidden gems and unforgettable moments worldwide.
+
+                .col-md-4
+                    img(src="img/icono_precios.svg", alt="security-icon", class="img-fluid mb-4")  
+                    h2.mb-4 Competitive pricing
+                    p Extraordinary journeys made affordable. Our commitment to competitive pricing, exclusive deals, and unbeatable discounts ensures remarkable savings. Embark on dream vacations without financial worries.     

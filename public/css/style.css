@@ -92,10 +92,10 @@ footer .nav a,
     font-size: 1.6rem;
     color: black;
 }
-.listado-iconos {
+.list-icons {
     background-color: rgb(245, 245, 245);
 }
-.listado-iconos img {
+.list-icons img {
     height: 100px;
 }
 
