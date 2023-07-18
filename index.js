@@ -12,6 +12,7 @@ db.authenticate()
     }).catch( err => {
         console.log(err);
     })
+    
 
 //MIDDLEWARE WITH EXPRESS
 //Define port

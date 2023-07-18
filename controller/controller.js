@@ -1,3 +1,5 @@
+import { Travel } from '../model/Travel.js'
+
 
 const homePage = (req, res) => {
    res.render('home', {
@@ -16,9 +18,14 @@ const testimonies = (req, res) => {
     })
 }
 
-const travel = (req, res) => {
+const travel =  async (req, res) => {
+    
+    //Get data in DB
+    const trips = await Travel.findAll();
+    console.log(trips);
     res.render('travel', {
-        nameSite: 'Travel'
+        nameSite: 'Travel',
+        findAllTrips: trips
     })
 }
 
