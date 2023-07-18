@@ -1,0 +1,41 @@
+extends ./layout/index
+
+block content  
+    main.container.mt-5 
+        .row
+            .col-md-5
+                img(src=`/img/destinos_${result.dataValues.image}_ln.jpg` alt="travelimg" class="img-fluid")
+            .col-md-7
+                h1= nameSite
+                p 
+                    svg.icon.icon-tabler.icon-tabler-calendar-pin(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#2c3e50' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4')
+                        path(d='M16 3v4')
+                        path(d='M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z')
+                        path(d='M19 18v.01')
+                        path(d='M8 3v4')
+                        path(d='M4 11h16')
+                    | Every year from #{result.dataValues.date_init} to #{result.dataValues.date_final}
+                p   
+                    svg.icon.icon-tabler.icon-tabler-users-group(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#2c3e50' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
+                        path(d='M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1')
+                        path(d='M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
+                        path(d='M17 10h2a2 2 0 0 1 2 2v1')
+                        path(d='M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
+                        path(d='M3 13v-1a2 2 0 0 1 2 -2h2')
+                    | #{result.dataValues.available} Available tickets
+                
+                p= result.dataValues.description 
+
+                p
+                    svg.icon.icon-tabler.icon-tabler-premium-rights(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#2c3e50' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0')
+                        path(d='M13.867 9.75c-.246 -.48 -.708 -.769 -1.2 -.75h-1.334c-.736 0 -1.333 .67 -1.333 1.5c0 .827 .597 1.499 1.333 1.499h1.334c.736 0 1.333 .671 1.333 1.5c0 .828 -.597 1.499 -1.333 1.499h-1.334c-.492 .019 -.954 -.27 -1.2 -.75')
+                        path(d='M12 7v2')
+                        path(d='M12 15v2')
+                    | Travel price: #{result.dataValues.price}    
+

@@ -22,13 +22,30 @@ const travel =  async (req, res) => {
     
     //Get data in DB
     const trips = await Travel.findAll();
-    console.log(trips);
+
     res.render('travel', {
         nameSite: 'Travel',
         findAllTrips: trips
     })
 }
 
+
+const detailTravel = async (req, res) => {
+
+    const { slug } = req.params;
+
+        try {
+            const result = await Travel.findOne({ where : { slug } });
+            console.log(result.dataValues.image);
+            res.render('detailTravel', {
+                nameSite: `Travel to ${result.dataValues.title}`,
+                result
+            })
+        } catch (error) {
+            
+        }
+}
+
 export {
-    homePage,aboutUs, testimonies, travel
+    homePage,aboutUs, testimonies, travel, detailTravel
 }

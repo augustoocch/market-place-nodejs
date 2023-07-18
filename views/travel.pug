@@ -7,7 +7,7 @@ block content
             each trip in findAllTrips
                 .col-md-6.col-lg-4.mb-4 
                     .card 
-                        img.card-img-top(src=`img/destinos_${trip.image}.jpg`)
+                        img.card-img-top(src=`img/destinos_${trip.image}_ln.jpg`)
                         .card-body 
                             h2= trip.title
                             p
@@ -29,7 +29,7 @@ block content
                                     path(d='M17 10h2a2 2 0 0 1 2 2v1')
                                     path(d='M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0')
                                     path(d='M3 13v-1a2 2 0 0 1 2 -2h2')
-                                | Available tickets #{trip.available}
+                                | #{trip.available} Available tickets
 
                             p= trip.description.substr(0,100) + "..."    
-                            a(href=`trips/${trip.slug}`, class="btn btn-success btn-block") More Info
+                            a(href=`travel/${trip.slug}`, class="btn btn-success btn-block") More Info
