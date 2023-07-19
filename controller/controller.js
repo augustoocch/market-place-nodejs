@@ -12,9 +12,9 @@ const aboutUs = (req, res) => {
     })
 }
 
-const testimonies = (req, res) => {
-    res.render('testimonies', {
-        nameSite: 'Testimonies'
+const reviews = (req, res) => {
+    res.render('reviews', {
+        nameSite: 'Reviews'
     })
 }
 
@@ -36,7 +36,6 @@ const detailTravel = async (req, res) => {
 
         try {
             const result = await Travel.findOne({ where : { slug } });
-            console.log(result.dataValues.image);
             res.render('detailTravel', {
                 nameSite: `Travel to ${result.dataValues.title}`,
                 result
@@ -46,6 +45,8 @@ const detailTravel = async (req, res) => {
         }
 }
 
+
+
 export {
-    homePage,aboutUs, testimonies, travel, detailTravel
+    homePage,aboutUs, reviews, travel, detailTravel
 }

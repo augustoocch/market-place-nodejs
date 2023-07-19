@@ -18,9 +18,6 @@ db.authenticate()
 //Define port
 const port = process.env.PORT || 4000;
 
-//Add router. This support all http methods
-app.use('/', router);
-
 //Add pug template engine
 app.set('view engine', 'pug');
 
@@ -30,13 +27,18 @@ app.use( (req, res, next) => {
     const year = new Date();
     res.locals.actualYear = year.getFullYear();
     res.locals.nameSite= "Travel Agency"
-    console.log(res.locals);
     
     next();
 });
 
+//Add body parser to read form data
+app.use(express.urlencoded({extended: true}));
+
 //Defining folder public as static folder for express
 app.use(express.static('public'));
+
+//Add router. This support all http methods
+app.use('/', router);
 
 app.listen(port, ()=> {
     console.log(`Server working on port ${port}`);

@@ -1,5 +1,6 @@
 import express from 'express';
-import { homePage, aboutUs, testimonies, travel, detailTravel } from '../controller/controller.js';
+import { homePage, aboutUs, reviews, travel, detailTravel } from '../controller/controller.js';
+import { saveReview } from '../controller/reviewControler.js';
 //Router creates an express instance defined
 //in the main index
 const router = express.Router();
@@ -8,7 +9,9 @@ router.get('/home', homePage);
 
 router.get('/us', aboutUs);
 
-router.get('/testimonies', testimonies);
+router.get('/reviews', reviews);
+
+router.post('/reviews', saveReview);
 
 router.get('/travel', travel);
 

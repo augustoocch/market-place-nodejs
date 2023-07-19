@@ -1,0 +1,22 @@
+extends ./layout/index
+
+block content
+    main.container.mt-5 
+        h1.text-center.mt-5 #{initialHeader}
+        .row        
+            h2.d-block.w-100.text-center Add a review
+
+            .row.justify-content-center.col
+                .col-md-8 
+                    form(action="/reviews" method="POST")
+                        .form-group 
+                            label(for="name") Name 
+                            input#name(type="text", placeholder="Name", name="name", class="form-control")
+                        .form-group 
+                            label(for="email") Email 
+                            input#email(type="email", placeholder="Email", name="email", class="form-control")
+                        .form-group 
+                            label(for="review") Review 
+                            textarea#review(class="form-control", placeholder="Review", name="review", rows="3")
+                        
+                        input.btn.btn-success.btn-block(type="submit")
