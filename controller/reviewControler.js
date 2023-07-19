@@ -1,3 +1,5 @@
+import { Review } from "../model/Review.js";
+
 
 const saveReview = async (req, res) => {
     
@@ -5,22 +7,40 @@ const saveReview = async (req, res) => {
     const error=[]
     const { name, email, review} = req.body;
     
-    if (name.trim() === "") {
-        error.push({message: "Empty name"})
+    if (name.trim() === "" || email.trim() === "" || review.trim() === "") {
+        error.push({message: "Form has empty values"})
         console.log("Empty name")
     }
-    if (email.trim() === "") {
-        error.push({message: "Empty email"})
-        console.log("Empty email")
-    }
-    if (review.trim() === "") {
-        error.push({message: "Empty review"})
-        console.log("Empty review")
+
+    if (error.length > 0) {
+        const allReviews = await Review.findAll();
+        res.render("reviews", {
+            nameSite: 'Reviews',
+            errors: error,
+            name,
+            email,
+            review,
+            allReviews
+        })
+    } else {
+        try {
+            await Review.create({
+                name: name,
+                email: email,
+                review: review
+            });
+            res.redirect("/reviews");
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
     console.log(req.body);
 }
 
+const getReviews = async (req, resp) => {
 
+}
 
 export {
     saveReview

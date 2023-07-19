@@ -1,5 +1,5 @@
 import { Travel } from '../model/Travel.js'
-
+import { Review } from "../model/Review.js";
 
 const homePage = (req, res) => {
    res.render('home', {
@@ -12,10 +12,19 @@ const aboutUs = (req, res) => {
     })
 }
 
-const reviews = (req, res) => {
-    res.render('reviews', {
-        nameSite: 'Reviews'
-    })
+const reviews = async (req, res) => {
+
+    try {
+        const reviews = await Review.findAll();
+
+        res.render('reviews', {
+            nameSite: 'Reviews',
+            reviews
+        })   
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 const travel =  async (req, res) => {
