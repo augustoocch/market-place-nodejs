@@ -1,10 +1,21 @@
 import { Travel } from '../model/Travel.js'
 import { Review } from "../model/Review.js";
 
-const homePage = (req, res) => {
-   res.render('home', {
-    nameSite: 'Home'
-})};
+const homePage = async (req, res) => {
+
+    //Get the 3 travels from Travel model
+    try {
+        const trips = await Travel.findAll({limit: 3});
+        res.render('home', {
+            nameSite: 'Home',
+            clase: 'home',
+            trips
+        })
+
+    }catch (error) {
+        console.log(error);
+    }
+};
 
 const aboutUs = (req, res) => {
     res.render('us', {
@@ -34,7 +45,7 @@ const travel =  async (req, res) => {
 
     res.render('travel', {
         nameSite: 'Travel',
-        findAllTrips: trips
+        trips
     })
 }
 

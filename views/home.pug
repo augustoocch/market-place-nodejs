@@ -1,7 +1,16 @@
 extends ./layout/index
 
+block slider 
+    .slider 
+        h1 Rio de Janeiro 
+        em adventure
+
 block content
     main.container.mt-5 
-        .row 
-            h1=initialHeader
-                img(src="/img/cupon.jpg")
+        h2.text-center.mb-5 Travel with us
+            .div-image-security 
+                img(src="/img/icono_seguridad.svg", alt="secure trip", width="100px")
+        .row.mb-5 
+            .div-center.text-center
+                p Start a new adventure and discover destinations without worring about the bookings, things to do and experiences to meet in the journey. Just make a click and enjoy an amazing life episode.
+        include ./layout/travelBlock
