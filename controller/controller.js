@@ -4,12 +4,16 @@ import { Review } from "../model/Review.js";
 const homePage = async (req, res) => {
 
     //Get the 3 travels from Travel model
+    const promiseDb = []
+    promiseDb.push(Travel.findAll({limit: 2}));
+    promiseDb.push(Review.findAll({limit: 2}));
     try {
-        const trips = await Travel.findAll({limit: 3});
+        const result = await Promise.all( promiseDb );
         res.render('home', {
             nameSite: 'Home',
             clase: 'home',
-            trips
+            trips: result[0],
+            reviews: result[1]
         })
 
     }catch (error) {

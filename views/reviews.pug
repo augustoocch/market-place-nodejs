@@ -6,16 +6,7 @@ block content
 
 
         h1.text-center Read about the experience of our clients
-        .row.reviews    
-            each review in reviews
-                .col-md-6.col-lg-4.mb-4 
-                    .card 
-                        .card-body 
-                            blockquote.blockquote 
-                            p.mb-0 
-                                | #{review.review} 
-                            footer.blockquote-footer 
-                                | #{review.name} 
+        include ./layout/reviewBlock
 
         .row
             .col-md-12        
